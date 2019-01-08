@@ -9,9 +9,9 @@ def qcheck(row_list):
     for y in row_list[counter:-1]:
         x_dist = list(range(len(row_list[counter:])))
         y_dist = list(map(lambda x:abs(x-y), row_list[counter:]))
-        same_row = list(map(int.__sub__, x_dist[1:], y_dist[1:]))
+        same_diag = list(map(int.__sub__, x_dist[1:], y_dist[1:]))
         
-        if 0 in same_row: return False
+        if 0 in same_diag: return False
         counter += 1
     
     return True    
